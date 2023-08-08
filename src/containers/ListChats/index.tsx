@@ -3,8 +3,12 @@ import React from 'react'
 import { BsPersonSquare } from 'react-icons/bs'
 import { AiOutlinePlusCircle } from 'react-icons/ai'
 import Space from '@/components/Space'
+import { useDispatch } from 'react-redux'
+import { select } from '@/reducers/selectReducers'
 
 const ListChats = () => {
+  const dispatch = useDispatch()
+
   return (
     <div className='w-full min-h-screen border-l border-r border-solid border-[#627e93]  border-opacity-30 shadow-lg'>
       <div className='w-full flex   px-3'>
@@ -24,7 +28,7 @@ const ListChats = () => {
 
       <div className='p-2'>
         {[1, 2, 3, 4, 5].map((elm) => (
-          <PersonText key={elm} />
+          <PersonText onClick={() => dispatch(select(elm))} key={elm} />
         ))}
       </div>
     </div>

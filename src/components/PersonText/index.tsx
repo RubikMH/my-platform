@@ -1,8 +1,15 @@
 import React from 'react'
 import { RxAvatar } from 'react-icons/rx'
-const PersonText = () => {
+
+interface IProps {
+  onClick: () => void
+}
+const PersonText: React.FC<IProps> = ({ onClick }) => {
   return (
-    <div className=' border border-solid rounded-md border-[#627e93] my-2 cursor-pointer hover:border-text transition-all duration-300 p-2'>
+    <div
+      className=' border border-solid rounded-md border-[#627e93] my-2 cursor-pointer hover:border-text transition-all duration-300 p-2'
+      onClick={onClick}
+    >
       <div className='w-full flex items-center'>
         <div className='mr-2'>
           <RxAvatar size={40} />
