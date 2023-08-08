@@ -5,7 +5,11 @@ import { RxAvatar } from 'react-icons/rx'
 import { useSelector } from 'react-redux'
 import Space from '@/components/Space'
 
-const BoxOfChat = () => {
+interface IProps {
+  socket: any
+}
+
+const BoxOfChat: React.FC = () => {
   const { selected } = useSelector((state: any) => state.selectChat)
 
   return (
