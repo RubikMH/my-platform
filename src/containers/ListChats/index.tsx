@@ -11,6 +11,8 @@ const ListChats = () => {
 
   return (
     <div className='w-full min-h-screen border-l border-r border-solid border-[#627e93]  border-opacity-30 shadow-lg'>
+      <Space />
+      <Space />
       <div className='w-full flex   px-3'>
         <h4 className='w-1/2 mt-5 font-bold'>Chats</h4>
         <div className=' flex justify-evenly mt-5 w-1/2'>

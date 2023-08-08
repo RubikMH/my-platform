@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ChatBox from '../ChatBox'
 import InputText from '@/components/InputText'
 import { RxAvatar } from 'react-icons/rx'
 import { useSelector } from 'react-redux'
+import Space from '@/components/Space'
 
 const BoxOfChat = () => {
   const { selected } = useSelector((state: any) => state.selectChat)
-  console.log('selectChat', selected)
 
   return (
     <div className='w-full h-screen  '>
@@ -24,6 +24,7 @@ const BoxOfChat = () => {
             </div>
           </div>
           <ChatBox />
+          <Space />
           <InputText />
         </>
       ) : (
