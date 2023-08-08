@@ -3,8 +3,9 @@ import { RxAvatar } from 'react-icons/rx'
 
 interface IProps {
   onClick: () => void
+  name: string
 }
-const PersonText: React.FC<IProps> = ({ onClick }) => {
+const PersonText: React.FC<IProps> = ({ onClick, name }) => {
   return (
     <div
       className=' border border-solid rounded-md border-[#627e93] my-2 cursor-pointer hover:border-text transition-all duration-300 p-2'
@@ -15,7 +16,7 @@ const PersonText: React.FC<IProps> = ({ onClick }) => {
           <RxAvatar size={40} />
         </div>
         <div>
-          <span className='block'>Byrom Guittet</span>
+          <span className='block'>{name}</span>
           <span className='text-[#627e93] truncate '>I sent you all the files. Got</span>
         </div>
       </div>

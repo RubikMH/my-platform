@@ -29,8 +29,8 @@ const ListChats = () => {
       <Space />
 
       <div className='p-2'>
-        {[1, 2, 3, 4, 5].map((elm) => (
-          <PersonText onClick={() => dispatch(select(elm))} key={elm} />
+        {['Amir', 'Jadi', 'Alireza'].map((elm) => (
+          <PersonText onClick={() => dispatch(select(elm))} key={elm} name={elm} />
         ))}
       </div>
     </div>

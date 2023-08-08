@@ -1,10 +1,7 @@
 import BoxOfChat from '@/containers/BoxOfChat'
 import ListChats from '@/containers/ListChats'
-import { DefaultEventsMap } from '@socket.io/component-emitter'
 import React, { useEffect, useState } from 'react'
 import { Socket, io } from 'socket.io-client'
-
-let socket: Socket<DefaultEventsMap, DefaultEventsMap>
 
 const Home = () => {
   const [input, setInput] = useState('')
@@ -23,17 +20,6 @@ const Home = () => {
   // useEffect(() => {
   //   socketInitializer()
   // }, [])
-
-  const [time, setTime] = React.useState('fetching')
-  React.useEffect(() => {
-    socket = io('http://localhost:8000')
-    socket.on('connect', () => console.log(socket.id))
-    socket.on('connect_error', () => {
-      setTimeout(() => socket.connect(), 5000)
-    })
-
-    socket.on('disconnect', () => setTime('server disconnected'))
-  }, [])
 
   return (
     <main className='w-full flex  '>

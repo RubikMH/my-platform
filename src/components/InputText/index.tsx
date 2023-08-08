@@ -1,19 +1,13 @@
 import { DefaultEventsMap } from '@socket.io/component-emitter'
 import React, { useEffect, useState } from 'react'
 import { RiSendPlane2Line } from 'react-icons/ri'
-import { Socket, io } from 'socket.io-client'
+import { Socket } from 'socket.io-client'
 
-let socket: Socket<DefaultEventsMap, DefaultEventsMap>
-
-const InputText: React.FC = () => {
+interface IProps {
+  socket: Socket<DefaultEventsMap, DefaultEventsMap>
+}
+const InputText: React.FC<IProps> = ({ socket }) => {
   const [message, setMessage] = useState('')
-
-  const sendMsg = async () => {
-    socket = io()
-  }
-  useEffect(() => {
-    sendMsg()
-  }, [])
 
   return (
     <div className='h-10  w-full '>
@@ -22,9 +16,11 @@ const InputText: React.FC = () => {
         onSubmit={(e) => {
           e.preventDefault()
           socket.emit('send-message', {
-            username: 'me',
-            message: message,
+            source: 'RubikMH',
+            destination: 'Amir',
+            msg: message,
           })
+          setMessage('')
         }}
       >
         <input

@@ -2,15 +2,16 @@ import React from 'react'
 
 interface IProps {
   gust: boolean
+  msg: string
 }
 
-const Massege: React.FC<IProps> = ({ gust }) => {
+const Massege: React.FC<IProps> = ({ gust, msg }) => {
   return (
-    <div className={`${gust ? ' justify-start' : 'justify-end'} w-full items-center flex h-10`}>
+    <div className={`${gust ? ' justify-start' : 'justify-end'} w-full  flex  items-center my-4`}>
       <div
         className={`${gust ? 'bg-blue-500' : 'bg-red-500'} max-w-xs rounded-lg px-2 py-1 w-full `}
       >
-        Massege
+        {msg}
       </div>
     </div>
   )
